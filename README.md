@@ -34,7 +34,7 @@ pip install pandas
   - E列：数量
   - F列：単価
   - G列：小計
-  - H列：備考（任意）
+  - H列：URL
 
 ### 3．実行
 ```bash
