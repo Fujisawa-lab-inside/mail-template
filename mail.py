@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import sys
 
-def process_csv_data(file_path, start_row, end_row):
+def process_csv_data(file_path, start_row, end_row, name, email, grade):
     try:
         if not os.path.exists(file_path):
             raise FileNotFoundError(f"ファイルが見つかりません: {file_path}")
@@ -18,9 +18,9 @@ def process_csv_data(file_path, start_row, end_row):
             "田中様，大八木様",
             "cc：藤澤先生",
             "",
-            "情報システム工学科 藤澤研究室 ４年",
+            f"情報システム工学科 藤澤研究室 {grade}",
             "",
-            "渡辺 太貴です．",
+            f"{name}です．",
             "",
             "以下の物品の手配をお願いいたします．",
             ""
@@ -66,8 +66,8 @@ def process_csv_data(file_path, start_row, end_row):
         footer_lines = [
             "-------------------------------------------------",
             "北九州市立大学　国際環境工学部 情報システム工学科 藤澤研究室",
-            "渡辺 太貴",
-            "E-mail: c1531069@eng.kitakyu-u.ac.jp",
+            f"{name}",
+            f"E-mail: {email}",
             "-------------------------------------------------"
         ]
         result_lines.extend(footer_lines)
@@ -83,9 +83,12 @@ def main():
     file_path = os.path.join(current_dir, "data.csv")
     start_row = 2
     end_row = 3
+    name = "渡辺 太貴"
+    email = "c1531069@eng.kitakyu-u.ac.jp"
+    grade = "B4"
     
     try:
-        results = process_csv_data(file_path, start_row - 2, end_row - 2)
+        results = process_csv_data(file_path, start_row - 2, end_row - 2, name, email, grade)
         
         for line in results:
             print(line)
