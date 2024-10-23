@@ -6,8 +6,8 @@
 
 1．リポジトリのクローン
 ```bash
-git clone https://github.com/Fujisawa-lab-inside/mail_template.git
-cd mail_template
+git clone https://github.com/Fujisawa-lab-inside/mail-template.git
+cd mail-template
 ```
 
 2．依存パッケージのインストール
