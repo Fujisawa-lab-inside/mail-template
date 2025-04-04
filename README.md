@@ -48,3 +48,6 @@ python3 mail.py
 - CSVファイルは必ずUTF-8形式で保存してください
 - 数値（数量・単価・小計）は半角数字で入力してください
 - 型番が不要な場合は空欄にしてください
+
+
+python3 -m streamlit run main.py
